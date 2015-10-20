@@ -1,0 +1,113 @@
+country_event = {
+	id = 99988
+	title = "EVTNAME99988"
+	desc = "EVTDESC99988"
+	picture = "russia"
+	
+	trigger = {
+		tag = RUR
+		in_sphere = RUS
+		NOT = { RUS = { government = democracy } }
+		average_militancy = 3
+		average_conciousness = 3
+	}
+	
+	mean_tome_to_happen = { 
+		months = 12
+		modifier = {
+			factor = 0.9
+			NOT = { relation = { who = RUS value = 0 } }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { relation = { who = RUS value = -50 } }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { relation = { who = RUS value = -100 } }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { relation = { who = RUS value = -150 } }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99988"
+		RUS = {
+			diplomatic_influence = {
+			who = RUR
+			value = -200
+			}
+			relation = {
+				who = THIS
+				value = -400
+			}
+			casus_belli = {
+				target = THIS
+				type = add_to_sphere
+				months = 60
+			}
+		}
+		any_pop = {
+			militancy = -5
+			conciousness = -5 
+		}
+		remove_country_modifier = relovution_under_siege
+	}
+	option = { 
+		name = "EVTOPTB99988"
+		any_pop = {
+			militancy = 5
+			conciousness = 5 
+		}
+	}
+}
+
+country_event = {
+	id = 99987
+	title = "EVTNAME99987"
+	desc = "EVTDESC99987"
+	picture = "russia"
+	
+	trigger = {
+		tag = RUR
+		in_sphere = RUS
+		NOT = { RUS = { government = democracy } }
+		NOT = { has_country_modifier = relovution_under_siege }
+	}
+	
+	mean_tome_to_happen = {
+		months = 1
+	}
+	
+	option = { 
+		name = "EVTOPTA99987"
+		add_country_modifier = {
+			name = relovution_under_siege
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = 99986
+	title = "EVTNAME99986"
+	desc = "EVTDESC99986"
+	picture = "russia"
+	
+	trigger = {
+		tag = RUR
+		NOT = { in_sphere = RUS }
+		has_country_modifier = relovution_under_siege
+	}
+	
+	mean_tome_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = "EVTOPTA99986"
+		remove_country_modifier = relovution_under_siege
+	}
+}

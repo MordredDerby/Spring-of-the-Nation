@@ -1,0 +1,12 @@
+owner = POL
+controller = POL
+add_core = POL
+trade_goods = wool
+life_rating = 35
+1861.1.1 = { railroad = 3 }
+1914.1.1 = { fort = 2 }
+1914.1.1 = { railroad = 4 }
+1923.1.1 = {
+	owner = POL
+	controller = POL
+}

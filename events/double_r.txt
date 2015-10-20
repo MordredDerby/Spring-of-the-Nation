@@ -1,0 +1,45 @@
+country_event = {
+	id = 99989
+	title = "EVTNAME99989"
+	desc = "EVTDESC99989"
+	picture = "russia"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		government = democracy
+		RUR = { exists = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "EVTOPTA99989"
+		annex_to = RUR
+	}
+	option = {
+		name = "EVTOPTB99989"
+		prestige = 10
+		RUR = {
+			casus_belli = {
+				target = THIS
+				type = civil_war
+				months = 60
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC99989"
+		war = {
+			target = RUR
+			attacker_goal = {
+				casus_belli = civil_war
+			}			
+			defender_goal = {
+				casus_belli = civil_war
+			}
+		}
+	}
+}		

@@ -1,0 +1,135 @@
+political_decisions = {
+	ukrainize = {
+		potential = {
+			tag = RUR
+			UKR = { exists = no }
+			pop_majority_culture = ukrainian
+		}
+		allow = {
+			#average_militancy = 5
+			average_consciousness = 5
+		}
+		effect = {
+			change_tag = UKR
+			primary_culture = ukrainian
+			add_accepted_culture = russian
+			capital = 958
+			any_pop = {
+				limit = {
+					culture = ukrainian
+					}
+				militancy = -9
+				consciousness = -9
+			}
+			remove_country_modifier = recognized
+			remove_country_modifier = not_recognized
+		}
+	}
+	
+	abolish_serfdom_RUR = {
+		potential = {
+			tag = RUR
+			has_country_flag = serfdom_not_abolished
+		}
+		allow = {
+			OR = {
+				ruling_party_ideology = liberal
+				ruling_party_ideology = conservative
+			}
+		}
+		effect = {
+			country_event = 99999
+			any_owned = {
+				remove_province_modifier = serfdom_province
+			}
+			remove_country_modifier = serfdom_crisis
+			badboy = -4
+			years_of_research = 0.05
+			clr_country_flag = serfdom_not_abolished
+		}
+	}
+	
+	annex_russia = {
+		potential = {
+			tag = RUR
+			war=yes	
+			RUS = {
+				ai=yes
+				war_with = this
+			}
+		}
+		allow = {
+			controls = 994
+			controls = 1008
+		}
+		effect = {
+			RUS = {
+				annex_to = THIS
+			}
+			RUS = {
+				all_core = {
+					add_core = RUR
+				}
+			}
+			capital = 1020
+			1020 = {
+				change_province_name = "Славенск"
+			}
+			remove_country_modifier = recognized
+			remove_country_modifier = not_recognized
+		}
+	}
+	
+	ask_for_recognition = {
+		potential = {
+			tag = RUR
+			NOT = { has_global_flag = RUR_recognized }
+			NOT = { has_global_flag = RUS_recognized }
+			NOT = { has_country_flag = asked }
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			set_country_flag = asked
+			set_variable = {
+				which = RUR_recognition
+				value = 0
+			}
+			set_variable = {
+				which = RUS_recognition
+				value = 0
+			}
+			any_country = {
+				limit = {
+					is_greater_power = yes
+					NOT ={ tag = RUS }
+				}
+				country_event = 99997
+			}
+		}
+	}
+	
+	#annex_poland = {
+	#	potential = {
+	#		tag = RUR
+	#		is_greater_power = yes
+	#		POL = { 
+	#			exists = yes
+	#			government = democracy
+	#		}
+	#	}
+	#	allow = {
+	#		POL = {
+	#			in_sphere = RUR 
+	#			relation = { who = RUR value = 100}
+	#		}
+	#	}
+	#	effect = {
+	#		POL = {
+	#			annex_to = RUR
+	#		}
+	#		add_accepted_culture = polish
+	#	}
+	#}
+}

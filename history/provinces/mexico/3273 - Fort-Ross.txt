@@ -1,0 +1,13 @@
+owner = RUS
+controller = RUS
+add_core = MEX
+add_core = CAL
+add_core = FRT
+trade_goods = fruit
+life_rating = 35
+1861.1.1 = {
+	owner = USA
+	controller = USA
+	add_core = USA
+}
+1914.1.1 = { railroad = 4 }

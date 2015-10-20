@@ -1,0 +1,6 @@
+alliance = {
+	first = "RUR"
+	second = "POL"
+	start_date = 1835.7.11
+	end_date = 1918.1.1
+}

@@ -1,0 +1,73 @@
+political_decisions = {
+	claim_rival = {
+		potential = {
+			has_country_modifier = recognized
+			NOT = { has_country_flag = claimed }
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			any_country = {
+				limit = {
+					OR = {
+						tag = RUR
+						tag = RUS
+					}
+					NOT = { tag = THIS }
+				}
+			war = {
+				target = THIS
+				attacker_goal = {
+					casus_belli = civil_war
+				}
+			
+				defender_goal = {
+					casus_belli = civil_war
+				}
+			}
+			}
+			any_pop = {
+				dominant_issue = {
+					value = jingoism
+					factor = 0.1
+				}
+			}
+			set_country_flag = claimed
+		}
+	}
+	
+	annex_rival = {
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = RUS
+				tag = RUR
+			}
+			OR = {
+				RUR = { is_greater_power = no }
+				RUS = { is_greater_power = no }
+			}
+			RUS = { government = democracy }
+			RUR = { government = democracy }
+		}
+		allow = {
+			OR = {
+				in_sphere_leader_of = RUR
+				in_sphere_leader_of = RUS
+			}
+		}
+		effect = {
+			any_country = {
+				limit = {
+					OR = {
+						tag = RUR
+						tag = RUS
+					}
+					NOT = { tag = THIS }
+				}
+				annex_to = THIS
+			}
+		}
+	}
+}

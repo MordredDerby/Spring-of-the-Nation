@@ -1,0 +1,16 @@
+name = "Декабрьское восстание"
+
+1825.12.29 = {
+	add_attacker = RUR
+	add_defender = RUS
+		
+	war_goal = {
+		casus_belli = conquest
+		actor = RUR
+		receiver = RUS
+	}
+}
+1835.1.1 = {
+	rem_attacker = RUR
+	rem_defender = RUS
+}

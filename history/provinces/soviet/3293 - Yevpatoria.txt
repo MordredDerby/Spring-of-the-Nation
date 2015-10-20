@@ -1,0 +1,16 @@
+owner = RUR
+controller = RUR
+add_core = RUR
+add_core = CRI
+trade_goods = fish
+life_rating = 35
+fort = 1
+1914.1.1 = { 
+	railroad = 3
+}
+1923.1.1 = {
+	owner = SOV
+	controller = SOV
+	add_core = SOV
+	remove_core = RUS
+}

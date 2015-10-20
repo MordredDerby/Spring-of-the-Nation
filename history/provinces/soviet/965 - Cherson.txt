@@ -1,0 +1,18 @@
+owner = RUR
+controller = RUR
+add_core = UKR
+add_core = RUR
+trade_goods = fish
+life_rating = 35
+1914.1.1 = {
+	railroad = 4
+	state_building = {
+		level = 1
+		building = liquor_distillery
+		upgrade = yes
+	}
+}
+1923.1.1 = {
+	owner = SOV
+	controller = RUR = SOV
+}

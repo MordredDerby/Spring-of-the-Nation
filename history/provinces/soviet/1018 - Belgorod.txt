@@ -1,0 +1,14 @@
+owner = RUR
+controller = RUR
+add_core = UKR
+add_core = RUR
+add_core = ZLS
+trade_goods = grain
+life_rating = 35
+1914.1.1 = { railroad = 3 }
+1923.1.1 = {
+	owner = SOV
+	controller = RUR = SOV
+	add_core = SOV
+	remove_core = RUS
+}

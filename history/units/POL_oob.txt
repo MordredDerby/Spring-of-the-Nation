@@ -1,0 +1,40 @@
+leader = {
+	name = "Йозеф Хлопицки"
+	date = 1812.1.1
+	type = land
+	personality = charismatic
+	background = adventurer
+}
+
+army = {
+	name = "Национальная гвардия"
+	location = 706
+	regiment = {
+		name= "1-я гвардейская бригада"
+		type = infantry
+		home = 706
+	}
+
+	regiment = {
+		name= "2-я гвардейская бригада"
+		type = infantry
+		home = 713
+	}
+
+	regiment = {
+		name= "3-я гвардейская бригада"
+		type = infantry
+		home = 710
+	}
+
+	regiment = {
+		name= "4-я гвардейская бригада"
+		type = artillery
+		home = 719
+	}
+
+	regiment = {
+		name= "5-я гвардейская бригада"
+		type = cavalry
+		home = 703
+	}

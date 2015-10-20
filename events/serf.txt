@@ -1,0 +1,31 @@
+country_event = {
+	id = 99999
+	title = "EVTNAME99999"
+	desc = "EVTDESC99999"
+	picture = "countryside"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA99999"
+		farmers = {
+			militancy = 2
+			money = -100
+		}
+		aristocrats = {
+			militancy = -2
+			money = 200
+		}
+	}
+	option = {
+		name = "EVTOPTB99999"
+		farmers = {
+			militancy = -2
+			money = 100
+		}
+		aristocrats = {
+			militancy = 2
+			money = -200
+		}
+	}
+}

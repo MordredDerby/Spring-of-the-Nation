@@ -1,0 +1,114 @@
+leader = {
+	name = "Сергей Муравьев-Апостол"
+	picture = rus_gen_vasilchikov
+	date = 1825.1.1
+	type = land
+	personality = charismatic
+	background = adventurer
+}
+leader = {
+	name = "Устим Кармелюк"
+	date = 1814.1.1
+	type = land
+	personality = clever
+	background = expert_raider
+}
+
+army = {
+	name = "Крестьянская армия"
+	location = 954
+	regiment = {
+		name= "1-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+	regiment = {
+		name= "2-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+	regiment = {
+		name= "3-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+	regiment = {
+		name= "4-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+	regiment = {
+		name= "5-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+	regiment = {
+		name= "6-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+	regiment = {
+		name= "7-я мужицкая бригада"
+		type = irregular
+		home = 954
+	}
+}
+
+army = {
+	name = "Гвардейский корпус"
+	location = 962
+	regiment = {
+		name= "1-я гвардейская бригада"
+		type = infantry
+		home = 962
+	}
+
+	regiment = {
+		name= "2-я гвардейская бригада"
+		type = infantry
+		home = 968
+	}
+
+	regiment = {
+		name= "3-я гвардейская бригада"
+		type = infantry
+		home = 980
+	}
+
+	regiment = {
+		name= "4-я гвардейская бригада"
+		type = infantry
+		home = 978
+	}
+
+	regiment = {
+		name= "5-я гвардейская бригада"
+		type = infantry
+		home = 979
+	}
+
+	regiment = {
+		name= "6-я гвардейская бригада"
+		type = artillery
+		home = 978
+	}
+
+	regiment = {
+		name= "7-я гвардейская бригада"
+		type = infantry
+		home = 973
+	}
+
+	regiment = {
+		name= "8-я гвардейская бригада"
+		type = infantry
+		home = 1018
+	}
+
+	regiment = {
+		name= "9-я гвардейская бригада"
+		type = infantry
+		home = 975
+	}
+
+}

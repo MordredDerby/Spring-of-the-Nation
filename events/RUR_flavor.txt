@@ -1,0 +1,81 @@
+country_event = {
+  id = 99985
+  title = "EVTNAME99985"
+  desc = "EVTDESC99985"
+  picture = "pushkin"
+  
+  fire_only_once = yes
+ 
+  trigger = {
+	tag = RUR
+    year = 1839
+    NOT = { year = 1840 }
+    month = 5
+  }
+  
+  mean_time_to_happen = {
+    days = 10
+  }
+  
+  option = {
+    name = "EVTOPTA99985"
+    prestige = 5
+    any_pop = {
+      ideology = {
+        factor = 0.05
+        value = liberal
+      }
+    }
+  }
+  option = {
+    name = "EVTOPTB99985"
+    prestige = 5 
+    social_reform = small_endowment
+  }
+}
+
+country_event = {
+	id = 99984
+	title = "EVTNAME99984"
+	desc = "EVTDESC99984"
+	picture = "bulba"
+  
+	fire_only_once = yes
+	
+	trigger = {
+		romanticism = 1
+		NOT = { press_rights = state_press }
+		any_pop = {
+			culture = ukrainian
+			literacy = 0.5
+		}
+	}
+	
+	mean_tome_to_happen = {	
+		months = 24
+	}
+	
+	option = {
+		name = "EVTOPTA99984"
+		any_pop = {
+			limit = {
+				culture = ukrainian
+			}
+			conciousness = 2
+			militancy = -0.5
+		}
+		set_country_flag = ukrainism
+	}
+	option = {
+		name = "EVTOPTB99984"
+		any_pop = {
+			limit = {
+				culture = ukrainian
+			}
+			conciousness = -1
+			militancy = 2
+		}
+		set_country_flag = ukrainism
+	}
+}
+  
