@@ -1626,3 +1626,12 @@ relovution_under_siege = {
 	prestige = -0.01
 	icon = 18
 }
+crimea_colonization = {
+	population_growth = 0.005
+	immigrant_attract = 10
+	icon = 20
+}
+sich = {
+	soldiers = 0.30
+	local_rgo_throughput = -0.2
+}

@@ -7,7 +7,7 @@ political_decisions = {
 		}
 		allow = {
 			#average_militancy = 5
-			average_consciousness = 5
+			average_consciousness = 1
 		}
 		effect = {
 			change_tag = UKR
@@ -132,4 +132,35 @@ political_decisions = {
 	#		add_accepted_culture = polish
 	#	}
 	#}
+	
+	expel_tartars = {
+		potential = {
+			tag = RUR
+			owns = 967
+		}
+		allow = {
+			citizenship_policy = residency			
+		}
+		effect = {
+			CRI = {
+				all_core = {
+					add_province_modifier = {
+						name = crimea_colonization
+						duration = 3650
+					}
+				}
+			}
+			any_pop = {
+				limit = {
+					culture = crimean_tatar
+				}
+				move_pop = 3295
+				militancy = 3
+			}
+			TUR = {
+				country_event = 99982
+			}
+			967 = { state_scope = { change_region_name =  "Таврида" } }
+		}
+	}
 }

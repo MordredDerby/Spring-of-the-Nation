@@ -1,0 +1,124 @@
+country_event = {
+	id = 99982
+	title = "EVTNAME99982"
+	desc = "EVTDESC99982"
+	picture = "ottoman"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA99982"
+		war = {
+			target = RUR
+			attacker_goal = {
+				casus_belli = liberate_country
+				country = CRI
+			}
+		}
+		any_pop = {
+			consciousness = -2
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				alliance_with = RUR
+			}
+			modifier = {
+				factor = 1.1
+				religious_policy = moralism
+			}
+			modifier = {
+				factor = 1.5
+				war_policy = jingoism
+			}
+			modifier = {
+				factor = 1.3
+				war_policy = pro_military
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB99982"
+		any_pop = {
+			limit = {
+				is_state_religion = yes
+			}
+			scaled_militancy = {
+				factor = 6
+				issue = moralism
+			}
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				war_policy = pacifism
+			}
+			modifier = {
+				factor = 1.3
+				war_policy = anti_military
+			}
+			modifier = {
+				factor = 1.1
+				religious_policy = atheism
+			}
+			modifier = {
+				factor = 1.5
+				war = yes
+			}
+			modifier = {
+				factor = 1.3
+				war_exhaustion = 10
+			}
+			modifier = {
+				factor = 3
+				NOT = { military_score = RUR }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 99981
+	title = "EVTNAME99981"
+	desc = "EVTDESC99981"
+	picture = "ottoman"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUR
+		truce_with = TUR
+		exists = CRI
+		has_unclaimed_cores = yes
+		has_recently_lost_war = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA99981"
+		any_pop = {
+			limit = {
+				culture = crimean_tatar
+			}
+			move_pop = 967
+		}
+		TUR = {
+			create_vassal = CRI
+		}
+		CRI = {
+			any_owned_province = {
+				remove_province_modifier = crimea_colonization
+			}
+			government = absolute_monarchy
+		}
+		967 = { state_scope = { change_region_name =  "Крым" } }
+		967 = { change_province_name = "Ахтиар" }
+		964 = { change_province_name = "Акъмесджит" }
+		3293 = { change_province_name = "Кезлев" }
+		3292 = { change_province_name = "Кефе" }
+	}
+}

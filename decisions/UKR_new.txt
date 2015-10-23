@@ -1,0 +1,33 @@
+political_decisions = {
+	restore_sich = {
+		potential = {
+			tag = UKR
+			NOT = { ruling_party_ideology = communist }
+			NOT = { ruling_party_ideology = socialist }
+			NOT = { ruling_party_ideology = anarcho_liberal }
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = sich
+				}
+			}
+		}
+		allow = {
+			tag = UKR
+		}
+		
+		effect = {
+			972 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+			}
+			963 = {
+				add_province_modifier = {
+						name = sich
+						duration = -1
+				}
+			}
+		}
+	}
+}
