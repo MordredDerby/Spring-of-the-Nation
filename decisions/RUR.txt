@@ -6,8 +6,9 @@ political_decisions = {
 			pop_majority_culture = ukrainian
 		}
 		allow = {
-			#average_militancy = 5
-			average_consciousness = 1
+			NOT = { ruling_party_ideology = fascist }
+			average_militancy = 5
+			average_consciousness = 5
 		}
 		effect = {
 			change_tag = UKR
@@ -23,6 +24,10 @@ political_decisions = {
 			}
 			remove_country_modifier = recognized
 			remove_country_modifier = not_recognized
+			RUS = {
+				remove_country_modifier = recognized
+				remove_country_modifier = not_recognized
+			}
 		}
 	}
 	
@@ -59,8 +64,14 @@ political_decisions = {
 			}
 		}
 		allow = {
-			controls = 994
-			controls = 1008
+			OR = {
+				controls = 994
+				994 = { controller = { alliance_with = RUR } }
+			}
+			OR = {
+				controls = 1008
+				1008 = { controller = { alliance_with = RUR } }
+			}
 		}
 		effect = {
 			RUS = {
@@ -71,12 +82,6 @@ political_decisions = {
 					add_core = RUR
 				}
 			}
-			capital = 1020
-			1020 = {
-				change_province_name = "Славенск"
-			}
-			remove_country_modifier = recognized
-			remove_country_modifier = not_recognized
 		}
 	}
 	
@@ -137,11 +142,14 @@ political_decisions = {
 		potential = {
 			tag = RUR
 			owns = 967
+			NOT = { has_country_flag = tatar_expel }
 		}
 		allow = {
-			citizenship_policy = residency			
+			citizenship_policy = residency
+			money = 100000
 		}
 		effect = {
+			treasury = -100000
 			CRI = {
 				all_core = {
 					add_province_modifier = {
@@ -157,10 +165,31 @@ political_decisions = {
 				move_pop = 3295
 				militancy = 3
 			}
+			3295 = {
+				add_province_modifier = {
+						name = keep_exciles
+						duration = 3650
+					}
+			}
 			TUR = {
 				country_event = 99982
 			}
 			967 = { state_scope = { change_region_name =  "Таврида" } }
+			set_country_flag = tatar_expel
+		}
+	}
+	rr_capital = {
+		potential = {
+			tag = RUR
+			NOT = { exists = RUS }
+			NOT = { has_country_flag = moved_capital }
+		}
+		allow = {
+			war = no
+		}
+		effect = {
+			country_event = 99976
+			set_country_flag = moved_capital
 		}
 	}
 }

@@ -1,17 +1,18 @@
-#РџСѓС€РєРёРЅ
+#Пушкин
 country_event = {
 	id = 99985
 	title = "EVTNAME99985"
 	desc = "EVTDESC99985"
 	picture = "pushkin"
-	fire_only_once = yes
  
 	trigger = {
 		tag = RUR
 		year = 1839
 		NOT = { year = 1840 }
 		month = 5
-  }
+	}
+	
+	fire_only_once = yes
   
 	mean_time_to_happen = {
 		days = 10
@@ -34,22 +35,31 @@ country_event = {
 	}
 }
 
-#Р“РѕРіРѕР»СЊ
+#Гоголь
 country_event = {
 	id = 99984
 	title = "EVTNAME99984"
 	desc = "EVTDESC99984"
 	picture = "bulba"
-	fire_only_once = yes
 	
 	trigger = {
 		romanticism = 1
 		year = 1840
 		NOT = { press_rights = state_press }
+		tag = RUR
 	}
 	
-	mean_tome_to_happen = {	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {	
 		months = 24
+	}
+	
+	immediate = { 
+		set_variable = {
+			which = opress_ukr
+			value = 0
+		}
 	}
 	
 	option = {
@@ -72,24 +82,32 @@ country_event = {
 			consciousness = -1
 			militancy = 2
 		}
+		set_country_flag = ukrainism
+		change_variable = { 
+				which = opress_ukr
+				value = 1
+		}
 	}
 }
 
-#РЁРµРІС‡РµРЅРєРѕ
+#Шевченко
 country_event = {
 	id = 99983
 	title = "EVTNAME99983"
 	desc = "EVTDESC99983"
 	picture = "shevchenko"
-	fire_only_once = yes
 	
 	trigger = {
 		year = 1840
+		NOT = { year = 1861 }
 		NOT = { press_rights = state_press }
-		has_contry_flag
+		has_country_flag = ukrainism
+		tag = RUR
 	}
 	
-	mean_tome_to_happen = {	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {	
 		months = 24
 	}
 	
@@ -113,6 +131,302 @@ country_event = {
 			consciousness = -1
 			militancy = 2.5
 		}
+		change_variable = { 
+			which = opress_ukr
+			value = 1
+		}
 	}
 }
-  
+
+#Тарасовцы
+province_event = {
+	id = 99979
+	title = "EVTNAME99979"
+	desc = "EVTDESC99979"
+	picture = "shevchenko"
+	
+	trigger = {
+		year = 1890
+		culture = ukrainian
+		literacy = 0.3
+		controlled_by = owner
+		NOT = { press_rights = state_press }
+		has_country_flag = ukrainism
+	}
+	
+	mean_time_to_happen = {	
+		months = 200
+		modifier = {
+			factor = 1.5
+			NOT = {
+				owner = {
+					nationalism_n_imperialism = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 4
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 5
+		}
+		modifier = {
+			factor = 0.9
+			average_militancy = 4
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 6
+		}
+		modifier = {
+			factor = 1.5
+			citizenship_policy = full_citizenship
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99979"
+		add_province_modifier = {
+			name = nationalist_agitation
+			duration = 700
+		}
+	}
+}
+
+#Кармелюк
+country_event = {
+	id = 99978
+	title = "EVTNAME99978"
+	desc = "EVTDESC99978"
+	picture = "karmeluk"
+	
+	trigger = {
+		has_leader = "Устим Кармелюк"
+		army_professionalism = 1
+		#any_pop = {
+		#	limit = {
+		#		type = officers
+		#	}
+		#	consciousness = 1.5
+		#}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {	
+		months = 180
+		modifier = {
+			factor = 0.8
+			citizenship_policy = full_citizenship
+		}
+		modifier = {
+			factor = 1.5
+			citizenship_policy = residency
+		}
+		modifier = {
+			factor = 0.6
+			war_policy = jingoism
+		}
+		modifier = {
+			factor = 2.5
+			war_policy = pacifism
+		}
+		modifier = {
+			factor = 0.5
+			tag = UKR
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99978"
+		any_pop = {
+			limit = {
+				culture = ukrainian
+				type = soldiers
+			}
+			consciousness = 5
+		}
+		add_country_modifier = {
+			name = karmeluk_reform
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB99978"
+		prestige = 1
+		change_variable = { 
+				which = opress_ukr
+				value = 1
+		}
+	}
+}
+
+#Укрореволюция
+country_event = {
+	id = 99977
+	title = "EVTNAME99977"
+	desc = "EVTDESC99977"
+	picture = "Christiansborgs"
+	
+	trigger = {
+		tag = RUR
+		pop_majority_culture = ukrainian
+		average_militancy = 5
+		average_consciousness = 5
+		has_country_flag = ukrainism
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.9
+			average_militancy = 6
+		}
+		modifier = {
+			factor = 0.9
+			average_militancy = 7
+		}
+		modifier = {
+			factor = 0.9
+			average_militancy = 8
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 6
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 7
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 8
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 9
+		}
+		modifier = {
+			factor = 0.9
+			mass_politics = 1
+		}
+		modifier = {
+			factor = 0.9
+			social_alienation = 1
+		}
+		modifier = {
+			factor = 0.9
+			nationalism_n_imperialism = 1
+		}
+		modifier = {
+			factor = 0.9
+			public_meetings = yes_meeting
+		}
+		modifier = {
+			factor = 1.5
+			NOT = {
+				check_variable = {
+					which = opress_ukr
+					value = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			check_variable = {
+				which = opress_ukr
+				value = 1
+			}
+		}
+		modifier = {
+			factor = 0.9
+			check_variable = {
+				which = opress_ukr
+				value = 2
+			}
+		}
+		modifier = {
+			factor = 0.9
+			check_variable = {
+				which = opress_ukr
+				value = 3
+			}
+		}
+		modifier = {
+			factor = 1.2
+			has_country_modifier = karmeluk_reform
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99977"
+		change_tag = UKR
+		primary_culture = ukrainian
+		capital = 958
+		remove_country_modifier = recognized
+		remove_country_modifier = not_recognized
+		any_pop = {
+			limit = {
+				culture = ukrainian
+			}
+			militancy = -9 
+		}
+		RUS = {
+			remove_country_modifier = recognized
+			remove_country_modifier = not_recognized
+		}
+	}
+	option = {
+		name = "EVTOPTB99977"
+		any_pop = {
+			limit = {
+				culture = ukrainian
+			}
+			militancy = 9 
+		}
+		capital_scope = {
+			any_pop = {
+				limit = {
+					culture = ukrainian
+				}
+				reduce_pop = 0.98
+			}
+		}
+	}
+}
+
+#Смена столицы
+country_event = {
+	id = 99976
+	title = "EVTNAME99976"
+	desc = "EVTDESC99976"
+	picture = "kiev"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA99976"
+		958 = { life_rating = 5 }
+	}
+	option = {
+		name = "EVTOPTB99976"
+		capital = 994
+		994 = { life_rating = 5 }
+	}
+	option = {
+		name = "EVTOPTC99976"
+		capital = 1008
+		1008 = { life_rating = 5 }
+	}
+	option = {
+		name = "EVTOPTD99976"
+		capital = 1020
+		1020 = {
+			change_province_name = "Славенск" 
+			life_rating = 5 
+		}
+	}
+}

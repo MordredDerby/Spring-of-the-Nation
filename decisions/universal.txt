@@ -53,8 +53,8 @@ political_decisions = {
 		}
 		allow = {
 			OR = {
-				in_sphere_leader_of = RUR
-				in_sphere_leader_of = RUS
+				is_sphere_leader_of = RUR
+				is_sphere_leader_of = RUS
 			}
 		}
 		effect = {

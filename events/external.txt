@@ -1,3 +1,4 @@
+#ќсманы уведомлены о выселении татар
 country_event = {
 	id = 99982
 	title = "EVTNAME99982"
@@ -61,7 +62,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 1.1
-				religious_policy = atheism
+				religious_policy = pro_atheism
 			}
 			modifier = {
 				factor = 1.5
@@ -71,20 +72,16 @@ country_event = {
 				factor = 1.3
 				war_exhaustion = 10
 			}
-			modifier = {
-				factor = 3
-				NOT = { military_score = RUR }
-			}
 		}
 	}
 }
 
+#Крымская война проиграна
 country_event = {
 	id = 99981
 	title = "EVTNAME99981"
 	desc = "EVTDESC99981"
 	picture = "ottoman"
-	fire_only_once = yes
 	
 	trigger = {
 		tag = RUR
@@ -93,6 +90,8 @@ country_event = {
 		has_unclaimed_cores = yes
 		has_recently_lost_war = yes
 	}
+	
+	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		days = 1
@@ -110,15 +109,15 @@ country_event = {
 			create_vassal = CRI
 		}
 		CRI = {
-			any_owned_province = {
+			any_owned = {
 				remove_province_modifier = crimea_colonization
 			}
 			government = absolute_monarchy
 		}
-		967 = { state_scope = { change_region_name =  " рым" } }
-		967 = { change_province_name = "јхтиар" }
-		964 = { change_province_name = "јкъмесджит" }
-		3293 = { change_province_name = " езлев" }
-		3292 = { change_province_name = " ефе" }
+		967 = { state_scope = { change_region_name =  "Крым" } }
+		967 = { change_province_name = "Ихтиар" }
+		964 = { change_province_name = "Акъмесджит" }
+		3293 = { change_province_name = "Кезлев" }
+		3292 = { change_province_name = "Кефе" }
 	}
 }

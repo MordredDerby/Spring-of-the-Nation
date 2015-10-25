@@ -1,15 +1,17 @@
+#В основной России демократическая революция
 country_event = {
 	id = 99989
 	title = "EVTNAME99989"
 	desc = "EVTDESC99989"
 	picture = "russia"
-	fire_only_once = yes
 	
 	trigger = {
 		tag = RUS
 		government = democracy
 		RUR = { exists = yes }
 	}
+	
+	fire_only_once = yes
 	
 	mean_time_to_happen = {
 		months = 1

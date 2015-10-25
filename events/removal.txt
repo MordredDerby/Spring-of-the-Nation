@@ -1,3 +1,4 @@
+#Республика больше не республика
 country_event = {
 	id = 99998
 	title = "EVTNAME99998"
@@ -24,12 +25,12 @@ country_event = {
 	}
 }
 
+#Конец ГВ
 country_event = {
-	id = 99992
-	title = "EVTNAME99992"
-	desc = "EVTDESC999992"
+	id = 99990
+	title = "EVTNAME99990"
+	desc = "EVTDESC99990"
 	picture = "russia"
-	fire_only_once = yes
 	
 		trigger = {
 			OR = {
@@ -41,13 +42,16 @@ country_event = {
 				RUS = { exists = no }
 			}
 		}
+		
+		fire_only_once = yes
+		
 		mean_time_to_happen = {
 			days = 1
 		}
 		option = {
-			name = "EVTOPTA99992"
-			clr_country_modifier = recognized
-			clr_country_modifier = not_recognized
+			name = "EVTOPTA99990"
+			remove_country_modifier = recognized
+			remove_country_modifier = not_recognized
 			prestige = 15
 			any_pop = {
 				militancy = -2

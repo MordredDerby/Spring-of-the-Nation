@@ -1620,18 +1620,29 @@ not_recognized = {
 	global_pop_militancy_modifier = 0.05
 	icon = 6
 }
-relovution_under_siege = {
+revolution_under_siege = {
 	global_pop_militancy_modifier = 0.05
-	global_pop_consciousness_modifier_modifier = 0.05
+	global_pop_consciousness_modifier = 0.05
 	prestige = -0.01
 	icon = 18
 }
 crimea_colonization = {
 	population_growth = 0.005
 	immigrant_attract = 10
-	icon = 20
+	icon = 19
 }
 sich = {
-	soldiers = 0.30
+	population_growth = 0.01
+	poor_life_needs = -0.3
 	local_rgo_throughput = -0.2
+	icon = 17
+}
+karmeluk_reform = {
+	mobilisation_size = 0.05
+	morale = 0.2
+	icon = 15
+}
+keep_exciles = {
+	immigrant_push = -3
+	icon = 20
 }

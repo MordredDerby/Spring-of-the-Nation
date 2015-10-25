@@ -1,0 +1,34 @@
+political_decisions = {
+	cossack_project = {
+		potential = {
+			tag = UKR
+			exists = DON
+			NOT = {
+				has_country_flag = cossack_project_realized
+			}
+		}
+		
+		allow = {
+			is_greater_power = yes
+			DON = {
+				in_sphere = UKR
+				relation = { who = UKR value = 150 }
+			}
+		}	
+				
+		effect = {
+			set_country_flag = cossack_project_realized
+			prestige = 10	
+			DON = {
+				all_core = {
+					add_core = UKR
+				}
+			}
+			add_accepted_culture = cossacian		
+			inherit = DON								
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

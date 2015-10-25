@@ -1,3 +1,4 @@
+#Попытка выйти из сферы
 country_event = {
 	id = 99988
 	title = "EVTNAME99988"
@@ -12,7 +13,7 @@ country_event = {
 		average_consciousness = 3
 	}
 	
-	mean_tome_to_happen = { 
+	mean_time_to_happen = { 
 		months = 12
 		modifier = {
 			factor = 0.9
@@ -53,7 +54,7 @@ country_event = {
 			militancy = -5
 			consciousness = -5 
 		}
-		remove_country_modifier = relovution_under_siege
+		remove_country_modifier = revolution_under_siege
 	}
 	option = { 
 		name = "EVTOPTB99988"
@@ -64,6 +65,7 @@ country_event = {
 	}
 }
 
+#Республика в сфере Империи
 country_event = {
 	id = 99987
 	title = "EVTNAME99987"
@@ -74,22 +76,23 @@ country_event = {
 		tag = RUR
 		in_sphere = RUS
 		NOT = { RUS = { government = democracy } }
-		NOT = { has_country_modifier = relovution_under_siege }
+		NOT = { has_country_modifier = revolution_under_siege }
 	}
 	
-	mean_tome_to_happen = {
+	mean_time_to_happen = {
 		months = 1
 	}
 	
 	option = { 
 		name = "EVTOPTA99987"
 		add_country_modifier = {
-			name = relovution_under_siege
+			name = revolution_under_siege
 			duration = -1
 		}
 	}
 }
 
+#Вышли из сферы
 country_event = {
 	id = 99986
 	title = "EVTNAME99986"
@@ -99,15 +102,15 @@ country_event = {
 	trigger = {
 		tag = RUR
 		NOT = { in_sphere = RUS }
-		has_country_modifier = relovution_under_siege
+		has_country_modifier = revolution_under_siege
 	}
 	
-	mean_tome_to_happen = {
+	mean_time_to_happen = {
 		days = 1
 	}
 	
 	option = { 
 		name = "EVTOPTA99986"
-		remove_country_modifier = relovution_under_siege
+		remove_country_modifier = revolution_under_siege
 	}
 }

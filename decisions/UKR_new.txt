@@ -12,22 +12,187 @@ political_decisions = {
 			}
 		}
 		allow = {
-			tag = UKR
+			owns = 1018
+			owns = 978
+			owns = 974
+			owns = 975
+			owns = 976
+			owns = 979
+			owns = 980
 		}
 		
 		effect = {
-			972 = {
+			1018 = {
 				add_province_modifier = {
 					name = sich
 					duration = -1
 				}
-			}
-			963 = {
-				add_province_modifier = {
-						name = sich
-						duration = -1
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
 				}
 			}
+			978 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
+				}
+			}
+			974 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
+				}
+			}
+			975 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
+				}
+			}
+			976 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
+				}
+			}
+			979 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
+				}
+			}
+			980 = {
+				add_province_modifier = {
+					name = sich
+					duration = -1
+				}
+				any_pop = {
+					limit = {
+						OR= {
+							culture = ukrainian
+							culture = cossacian
+						}
+						NOT = { life_needs = 0.1 }
+						OR = {
+							type = farmers
+							type = labourers
+						}
+					}
+					pop_type = soldiers
+				}
+			}
+		}
+	}
+	
+	great_ukraine = {
+		potential = {
+			tag = UKR
+			nationalism_n_imperialism = 1
+			NOT = { has_country_flag = ukraine_ulterior }
+		}
+		allow = { 
+			has_unclaimed_cores = no
+			prestige = 60
+			OR = {
+				ruling_party_ideology = conservative
+				ruling_party_ideology = reactionary
+				ruling_party_ideology = fascist
+			}
+		}
+		effect = {
+			set_country_flag = ukraine_ulterior
+			RUS_964 = {
+				add_core = UKR
+			}
+			977 = { add_core =  UKR }
+			1019 = { add_core =  UKR }
+			1025 = { add_core =  UKR }
+			1016 = { add_core =  UKR }
+			RUS_979 = { add_core =  UKR }
+			RUS_1050 = { add_core =  UKR }
+			RUS_1049 = { add_core =  UKR }
+			RUS_1048 = { add_core =  UKR }
 		}
 	}
 }

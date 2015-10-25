@@ -1,3 +1,4 @@
+#Выкупные платежи vs земельные участки
 country_event = {
 	id = 99999
 	title = "EVTNAME99999"
@@ -30,41 +31,42 @@ country_event = {
 	}
 }
 
-province_event = {
-	id = 99980
-	title = "EVTNAME99980"
-	desc = "EVTDESC99980"
-  
-	trigger = {
-		tag = RUS
-		has_province_modifier = serfdom 
-		any_neighbor_province = {
-			NOT = { has_province_modifier = serfdom }
-			owned_by = RUR
-		}
-	}
-  
-	mean_time_to_happen = { 
-		months = 12
-	}
-  
-	option = { 
-		any_pop = { 
-			limit = {
-				OR = {
-					type = farmers
-					type = labourers
-				}
-			NOT = { life_needs = 50 }
-			}
-			move_pop = { 
-				random_neighbor_province = { 
-					limit = { 
-						owned_by = RUR 
-						NOT ={ has_province_modifier = serfdom } 
-					}
-				}
-			}
-		}
-	}
-}      
+#Беглые крестьяне
+#province_event = {
+#	id = 99980
+#	title = "EVTNAME99980"
+#	desc = "EVTDESC99980"
+#  
+#	trigger = {
+#		tag = RUS
+#		has_province_modifier = serfdom_province 
+#		any_neighbor_province = {
+#			NOT = { has_province_modifier = serfdom_province }
+#			owned_by = RUR
+#		}
+#	}
+#  
+#	mean_time_to_happen = { 
+#		months = 12
+#	}
+#  
+#	option = { 
+#		any_pop = { 
+#			limit = {
+#				OR = {
+#					type = farmers
+#					type = labourers
+#				}
+#			NOT = { life_needs = 50 }
+#			}
+#			move_pop = { 
+#				random_neighbor_province = { 
+#					limit = { 
+#						owned_by = RUR 
+#						NOT ={ has_province_modifier = serfdom_province } 
+#					}
+#				}
+#			}
+#		}
+#	}
+#}      
