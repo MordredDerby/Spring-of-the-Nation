@@ -1,0 +1,242 @@
+#Литовское восстание
+country_event = {
+	id = 99974
+	title = "EVTNAME99974"
+	desc = "EVTDESC99974"
+	picture = "polishrevolt"
+	
+	trigger = {
+		tag = RUS
+		NOT = { minorities = tolerance  }
+		NOT = { exists = LIT }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			has_country_modifier = not_recognized
+		}
+		modifier = {
+			factor = 0.8
+			has_country_modifier = serfdom_crisis
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 4
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 5
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 6
+		}
+		modifier = {
+			factor = 0.9
+			average_militancy = 4
+		}
+		modifier = {
+			factor = 0.9
+			average_militancy = 5
+		}
+		modifier = {
+			factor = 0.9
+			average_militancy = 6
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99974"
+		any_pop = {
+			limit = {
+				OR = {
+					culture = byelorussian
+					culture = lithuanian
+				}
+			}
+			militancy = 10
+			consciousness = 10
+		}
+		any_owned = {
+			limit = {
+				culture = lithuanian
+			}
+			add_province_modifier = {
+				name = nationalist_agitation
+				duration = 800
+			}
+		}
+		POL = {
+			country_event = 99973
+		}
+	}
+}
+
+#Реакция Польши
+country_event = {
+	id = 99973
+	title = "EVTNAME99973"
+	desc = "EVTDESC99973"
+	picture = "polishrevolt"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA99973"
+		war = {
+			target = RUS
+			attacker_goal = {
+				casus_belli = liberate_country
+				country = LIT
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB99973"
+		any_pop = {
+			militancy = 3
+			consciousness = 3
+		}
+	}
+}
+	
+#Смена правления
+country_event = {
+	id = 99971
+	title = "EVTNAME99971"
+	desc = "EVTDESC99971"
+	picture = "hungrev"
+	
+	trigger = {
+		tag = POL
+		government = presidential_dictatorship
+		war = no
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.1
+			NOT = { has_leader = "Йозеф Хлопицки" }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99971"
+		government = democracy
+		election = yes
+		any_pop = {
+			militancy = -2
+			consciousness = 2
+		}
+	}
+	option = {
+		name = "EVTOPTB99971"
+		government = hms_government
+		election = yes
+		prestige = 5
+		random_country = {
+			limit = {
+				is_greater_power = yes
+				capital_scope = { continent = europe }
+				NOT = { tag = RUS }
+				OR = {
+					government = absolute_monarchy
+					government = prussian_constitutionalism
+					government = hms_government
+				}
+			}
+			diplomatic_influence = {
+				who = POL
+				value = 50
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC99971"
+		scaled_militacy = {
+			factor = 4
+			ideology = liberal
+		}
+	}
+}
+	
+#Помощь польской дисапоры
+country_event = {
+	id = 99970
+	title = "EVTNAME99970"
+	desc = "EVTDESC99970"
+	picture = "artillery"
+	
+	trigger = {
+		NOT = { tag = POL }
+		NOT = { tag = PLC }
+		exists = POL
+		any_owned_province = { culture = polish }
+		POL = {
+			NOT = { rank = 20 }
+			NOT = { total_amount_of_divisions = 15 }
+			NOT = { war_with = this }
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		
+		modifier = {
+			factor = 0.5
+			POL = { war = yes}
+		}
+		modifier = {
+			factor = 0.9
+			nationalism_n_imperialism = 1
+		}
+		modifier = {
+			factor = 0.9
+			POL = { NOT = { total_amount_of_divisions = 10 } }
+		}
+		modifier = {
+			factor = 0.8
+			POL = { NOT = { total_amount_of_divisions = 5 } }
+		}
+		modifier = {
+			factor = 0.6
+			POL = { NOT = { total_amount_of_divisions = 1 } }
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99970"
+		any_pop = {
+			limit ={
+				culture = polish
+			}
+			money = -150
+			militacny = -1
+		}
+		POL = { country_event = 99969 }
+	}
+}
+
+#Польша получает помощь
+country_event = {
+	id = 99969
+	title = "EVTNAME99969"
+	desc = "EVTDESC99969"
+	picture = "artillery"
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "EVTOPTA99970"
+		small_arms = 200
+		ammunition = 200
+	}
+}

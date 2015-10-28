@@ -538,7 +538,9 @@ MAI	= "countries/Mariana Islands.txt"
 MIS	= "countries/Marshall Islands.txt"
 GUM	= "countries/Guam.txt"
 
+#Декабристомод
 RUR = "countries/Russian Republic.txt"
+SAK = "countries/Sakhalin.txt"
 
 #HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions

@@ -1,0 +1,14 @@
+add_core = PRI
+trade_goods = fish
+life_rating = 20
+1914.1.1 = {
+	owner = RUS
+	controller = RUS
+	trade_goods = oil
+}
+1923.1.1 = {
+	owner = SOV
+	controller = SOV
+	add_core = SOV
+	remove_core = RUS
+}

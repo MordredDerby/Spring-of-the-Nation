@@ -1646,3 +1646,10 @@ keep_exciles = {
 	immigrant_push = -3
 	icon = 20
 }
+russian_separatists = {
+	rebel_org_gain = {
+		faction = nationalist_rebels 
+		value = 0.33
+	}
+	seperatism = 0.5
+}

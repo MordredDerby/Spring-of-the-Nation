@@ -1,0 +1,57 @@
+country_event = {
+	id = 99972
+	title = "EVTNAME99972"
+	desc = "EVTDESC99972"
+	picture = "thermopylae"
+	
+	trigger = {
+		tag = RUS
+		NOT = { government = democracy }
+		1087 = { empty = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.9
+			average_consciousness = 4
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 5
+		}
+		modifier = {
+			factor = 0.9
+			average_consciousness = 6
+		}
+		modifier = {
+			factor = 0.9
+			has_country_modifier = not_recognized
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99972"
+		random_pop = {
+			limit = {
+				culture = russian
+				type = officers
+			}
+			move_pop = 1087
+		}
+		1086 = { add_core = SAK }
+		1087 = { add_core = SAK }
+		any_country = {
+			limit = {
+				NOT = {
+					tag = SAK
+				}
+			}
+			release = SAK
+		}
+		1088 = { add_core = SAK }
+		1088 = { add_core = SAK }
+		1086 = { change_province_name = "Муравьевск" }
+		1087 = { change_province_name = "Милорадов" }
+	}
+}
