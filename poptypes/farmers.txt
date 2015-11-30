@@ -842,6 +842,12 @@ promote_to =
 		factor = 0.01
 		group = {
 			modifier = {
+			factor = 4.0
+			location = { has_province_modifier = sich }
+			}
+		}
+		group = {
+			modifier = {
 				factor = -4
 				recruited_percentage = 0.0
 			}

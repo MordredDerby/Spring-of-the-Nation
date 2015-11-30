@@ -162,9 +162,13 @@ political_decisions = {
 	
 	expel_tartars = {
 		potential = {
-			tag = RUR
+			OR = {
+				tag = UKR
+				tag = RUR
+			}
 			owns = 967
 			NOT = { has_country_flag = tatar_expel }
+			NOT = { accepted_culture = crimean_tatar }
 		}
 		allow = {
 			citizenship_policy = residency
@@ -212,6 +216,27 @@ political_decisions = {
 		effect = {
 			country_event = 99976
 			set_country_flag = moved_capital
+		}
+	}
+	build_miloradovich_monument = {
+		potential = {
+			tag = RUR
+			any_owned_province = {
+				NOT = { has_province_modifier = miloradovich_monument }
+			}
+		}
+		allow = {
+			money = 5000
+		}
+		effect = {
+			treasury = -5000
+			capital_scope = {
+				add_province_modifier = {
+					name = miloradovich_monument
+					duration = -1
+				}
+			}
+			prestige = 5
 		}
 	}
 }

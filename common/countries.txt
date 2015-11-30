@@ -541,6 +541,7 @@ GUM	= "countries/Guam.txt"
 #Декабристомод
 RUR = "countries/Russian Republic.txt"
 SAK = "countries/Sakhalin.txt"
+TAU = "countries/Taurida.txt"
 
 #HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions

@@ -160,7 +160,7 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTC99971"
-		scaled_militacy = {
+		scaled_militancy = {
 			factor = 4
 			ideology = liberal
 		}
@@ -172,7 +172,7 @@ country_event = {
 	id = 99970
 	title = "EVTNAME99970"
 	desc = "EVTDESC99970"
-	picture = "artillery"
+	picture = "guns"
 	
 	trigger = {
 		NOT = { tag = POL }
@@ -192,7 +192,7 @@ country_event = {
 		
 		modifier = {
 			factor = 0.5
-			POL = { war = yes}
+			POL = { war = yes }
 		}
 		modifier = {
 			factor = 0.9
@@ -219,9 +219,21 @@ country_event = {
 				culture = polish
 			}
 			money = -150
-			militacny = -1
+			militancy = -1
 		}
 		POL = { country_event = 99969 }
+	}
+	option = {
+		name = "EVTOPTB99970"
+		any_pop = {
+			limit ={
+				culture = polish
+			}
+			money = -150
+			militancy = 3
+		}
+		small_arms = 200
+		ammunition = 200
 	}
 }
 
@@ -230,13 +242,116 @@ country_event = {
 	id = 99969
 	title = "EVTNAME99969"
 	desc = "EVTDESC99969"
-	picture = "artillery"
+	picture = "guns"
 	
 	is_triggered_only = yes
 	
 	option = { 
-		name = "EVTOPTA99970"
+		name = "EVTOPTA99969"
 		small_arms = 200
 		ammunition = 200
+	}
+}
+
+#Варшавский университет
+country_event = {
+	id = 99968
+	title = "EVTNAME99968"
+	desc = "EVTDESC99968"
+	picture = "warsawuniversity"
+	
+	trigger = {
+		tag = POL
+		education_spending = 0.25
+		NOT = { has_country_modifier = warsaw_university_1 }
+		NOT = { has_country_modifier = warsaw_university_2 }
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.9
+			education_spending = 0.5
+		}
+		modifier = {
+			factor = 0.9
+			education_spending = 0.75
+		}
+		modifier = {
+			factor = 0.8
+			education_spending = 0.99
+		}
+		modifier = {
+			factor = 0.9
+			functionalism = 1
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99968"
+		treasury = -30000
+		add_country_modifier = {
+			name = warsaw_university_1
+			duration = -1
+		}
+	}
+	option = {
+		name = "EVTOPTB99968"
+		any_pop = {
+			consciousness = 2
+		}
+		add_country_modifier = {
+			name = warsaw_university_2
+			duration = -1
+		}
+	}
+}
+
+#Разрыв с РР
+country_event = {
+	id = 99961
+	title = "EVTNAME99961"
+	desc = "EVTDESC99961"
+	picture = "election"
+	
+	trigger = {
+		year = 1845
+		average_consciousness = 2
+		any_core = {
+			owned_by = RUR
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 3
+			war = yes
+		}
+		modifier = {
+			factor = 0.8
+			in_sphere = RUR
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99961"
+		any_pop = {
+			dominant_issue = {
+				value = jingoism
+				factor = 0.1
+			}
+		}
+		leave_alliance = RUR
+		relation = {
+			who = RUR
+			value = -400
+		}
+		RUR = {
+			diplomatic_influence = {
+				who = POL
+				value = -200
+			}
+		}
 	}
 }

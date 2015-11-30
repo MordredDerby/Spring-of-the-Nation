@@ -1,3 +1,4 @@
+#Казацкий путч
 country_event = {
 	id = 99975
 	title = "EVTNAME99975"
@@ -108,10 +109,19 @@ country_event = {
 			money = 500
 		}
 		any_owned = {
-			add_province_modifier = {
-					name = sich
-					duration = -1
+			limit = {
+				has_province_modifier = sich
+			}
+			any_pop = {
+				limit = {
+					culture = ukrainian
+					OR = {
+						type = officers
+						type = soldiers
+					}
 				}
+				culture = cossacian
+			}
 		}
 		political_reform = none_voting
 		political_reform = party_appointed
@@ -139,5 +149,503 @@ country_event = {
 		remove_country_modifier = pig_headed_isolationist
 		remove_country_modifier = ambitious_union_boss
 		remove_country_modifier = dour_economist
+	}
+}
+
+#Румыны просят признания
+country_event = {
+	id = 99967
+	title = "EVTNAME99967"
+	desc = "EVTDESC99967"
+	picture = "unite"
+	
+	trigger = {
+		tag = UKR
+		owns = 676
+		NOT = { 
+			accepted_culture = romanian
+			#exists = MOL
+			minorities = oppression
+			minorities = apartheid
+			government = fascist_dictatorship
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.9
+			minorities = protected
+		}
+		modifier = {
+			factor = 0.9
+			minorities = tolerance
+		}
+		modifier = {
+			factor = 0.9
+			citizenship_policy = full_citizenship
+		}
+		modifier = {
+			factor = 2
+			citizenship_policy = residency
+		}
+		modifier = {
+			factor = 4
+			ideology = fascist
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99967"
+		any_pop = {
+			limit = {
+				culture = romanian
+			}
+			militancy = -3
+			consciousness = -3
+		}
+		add_accepted_culture = romanian
+	}
+	
+	#option = {
+	#	name = "EVTOPTB99967"
+	#	release_vassal = MOL
+	#	badboy = -5
+	#}
+	
+	option = {
+		name = "EVTOPTB99967"
+		any_pop = {
+			limit = {
+				culture = romanian
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		prestige = 2
+	}
+}
+	
+#Греки vs татары
+country_event = {
+	id = 99966
+	title = "EVTNAME99966"
+	desc = "EVTDESC99966"
+	picture = "unite"
+	
+	trigger = {
+		tag = UKR
+		owns = 967
+		NOT = { 
+			accepted_culture = greek
+			accepted_culture = crimean_tatar
+			has_country_flag = tatar_expel
+			OR = {
+				exists = TAU
+				exists = CRI
+			}
+			minorities = oppression
+			minorities = apartheid
+			government = fascist_dictatorship
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.9
+			minorities = protected
+		}
+		modifier = {
+			factor = 0.9
+			minorities = tolerance
+		}
+		modifier = {
+			factor = 0.9
+			citizenship_policy = full_citizenship
+		}
+		modifier = {
+			factor = 2
+			citizenship_policy = residency
+		}
+		modifier = {
+			factor = 4
+			ideology = fascist
+		}
+	}
+	
+	immediate = {
+		RUS_964 = {
+			add_core = TAU
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99966"
+		add_accepted_culture = greek
+		any_pop = {
+			limit = {
+				culture = greek
+			}
+			militancy = -3
+			consciousness = -3
+		}
+		any_pop = {
+			limit = {
+				culture = crimean_tatar
+			}
+			militancy = 3
+			consciousness = 3
+		}
+	}
+	option = {
+		name = "EVTOPTB99966"
+		release_vassal = TAU
+		badboy = -5
+		966 = { change_province_name = "Пантикапей" }
+	}
+	option = {
+		name = "EVTOPTC99966"
+		add_accepted_culture = crimean_tatar
+		any_pop = {
+			limit = {
+				culture = crimean_tatar
+			}
+			militancy = -3
+			consciousness = -3
+		}
+		any_pop = {
+			limit = {
+				culture = greek
+			}
+			militancy = 3
+			consciousness = 3
+		}
+	}
+	option = {
+		name = "EVTOPTD99966"
+		release_vassal = CRI
+		badboy = -5
+		967 = { state_scope = { change_region_name =  "Крым" } }
+		967 = { change_province_name = "Ихтиар" }
+		964 = { change_province_name = "Акъмесджит" }
+		3293 = { change_province_name = "Кезлев" }
+		3292 = { change_province_name = "Кефе" }
+	}
+	option = {
+		name = "EVTOPTE99966"
+		any_pop = {
+			limit = {
+				OR = {
+					culture = crimean_tatar
+					culture = greek
+				}
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		prestige = 2
+	}
+}
+
+#Греки просят признания
+country_event = {
+	id = 99965
+	title = "EVTNAME99965"
+	desc = "EVTDESC99965"
+	picture = "unite"
+	
+	trigger = {
+		tag = UKR
+		owns = 967
+		has_country_flag = tatar_expel
+		NOT = { 
+			accepted_culture = greek
+			minorities = oppression
+			minorities = apartheid
+			government = fascist_dictatorship
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.9
+			minorities = protected
+		}
+		modifier = {
+			factor = 0.9
+			minorities = tolerance
+		}
+		modifier = {
+			factor = 0.9
+			citizenship_policy = full_citizenship
+		}
+		modifier = {
+			factor = 2
+			citizenship_policy = residency
+		}
+		modifier = {
+			factor = 4
+			ideology = fascist
+		}
+	}
+
+	immediate = {
+		RUS_964 = {
+			add_core = TAU
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99965"
+		add_accepted_culture = greek
+		any_pop = {
+			limit = {
+				culture = greek
+			}
+			militancy = -3
+			consciousness = -3
+		}
+	}
+	option = {
+		name = "EVTOPTB99965"
+		release_vassal = TAU
+		badboy = -5
+		966 = { change_province_name = "Пантикапей" }
+	}
+	option = {
+		name = "EVTOPTC99965"
+		any_pop = {
+			limit = {
+				culture = greek
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		prestige = 2
+	}
+	option = {
+		name = "EVTOPTE99965"
+		any_pop = {
+			limit = {
+				culture = greek
+			}
+			militancy = 4
+			consciousness = 4
+		}
+		any_pop = {
+			limit = {
+				culture = crimean_tatar
+			}
+			move_pop = 967
+			militancy = -3
+		}
+	}
+}
+#Поляки
+country_event = {
+	id = 99964
+	title = "EVTNAME99964"
+	desc = "EVTDESC99964"
+	picture = "unite"
+	
+	trigger = {
+		tag = UKR
+		any_owned_province = {
+			is_core = POL
+		}
+		NOT = { 
+			accepted_culture = polish
+			minorities = oppression
+			minorities = apartheid
+			government = fascist_dictatorship
+		}
+		exists = POL
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPTA99964"
+		add_accepted_culture = polish
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			militancy = -3
+			consciousness = -3
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB99964"
+		relation = {
+			who = POL
+			value = 100
+		}
+		any_owned = {
+			limit = {
+				is_core = POL
+			}
+			secede_province = POL
+		}
+	}
+
+	option = {
+		name = "EVTOPTC99964"
+		relation = {
+			who = POL
+			value = -100
+		}
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		prestige = 2
+	}
+}
+#Поляки без Польши
+country_event = {
+	id = 99963
+	title = "EVTNAME99963"
+	desc = "EVTDESC99963"
+	picture = "unite"
+	
+	trigger = {
+		tag = UKR
+		any_owned_province = {
+			is_core = POL
+		}
+		NOT = { 
+			accepted_culture = polish
+			minorities = oppression
+			minorities = apartheid
+			government = fascist_dictatorship
+			exists = POL
+		}
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = "EVTOPTA99963"
+		add_accepted_culture = polish
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			militancy = -3
+			consciousness = -3
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB99964"
+		badboy = -5
+		release_vassal = POL
+	}
+
+	option = {
+		name = "EVTOPTC99963"
+		any_pop = {
+			limit = {
+				culture = polish
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		prestige = 2
+	}
+}
+#Евреи просят признания
+country_event = {
+	id = 99962
+	title = "EVTNAME99962"
+	desc = "EVTDESC99962"
+	picture = "unite"
+	
+	trigger = {
+		tag = UKR
+		owns = 678
+		NOT = { 
+			accepted_culture = ashkenazi
+			exists = ISR
+			minorities = oppression
+			minorities = apartheid
+			government = fascist_dictatorship
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 36
+		modifier = {
+			factor = 0.9
+			minorities = protected
+		}
+		modifier = {
+			factor = 0.9
+			minorities = tolerance
+		}
+		modifier = {
+			factor = 0.9
+			citizenship_policy = full_citizenship
+		}
+		modifier = {
+			factor = 2
+			citizenship_policy = residency
+		}
+		modifier = {
+			factor = 4
+			ideology = fascist
+		}
+	}
+	
+	immediate = {
+		968 = { add_core = ISR }
+		ISR = {
+			capital = 968
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA99962"
+		any_pop = {
+			limit = {
+				culture = ashkenazi
+			}
+			militancy = -3
+			consciousness = -3
+		}
+		add_accepted_culture = ashkenazi
+	}
+	
+	option = {
+		name = "EVTOPTB99967"
+		release_vassal = ISR
+		badboy = -5
+	}
+	
+	option = {
+		name = "EVTOPTC99962"
+		any_pop = {
+			limit = {
+				culture = ashkenazi
+			}
+			militancy = 3
+			consciousness = 3
+		}
+		prestige = 2
 	}
 }

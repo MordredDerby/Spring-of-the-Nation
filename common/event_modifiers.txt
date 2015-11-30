@@ -1646,10 +1646,22 @@ keep_exciles = {
 	immigrant_push = -3
 	icon = 20
 }
-russian_separatists = {
-	rebel_org_gain = {
-		faction = nationalist_rebels 
-		value = 0.33
-	}
-	seperatism = 0.5
+warsaw_university_1 = {
+	education_efficiency_modifier = 0.2
+	research_points = 0.5
+	icon = 3
+}
+warsaw_university_2 = {
+	education_efficiency_modifier = 0.1
+	research_points = 0.25
+	icon = 3
+}
+poland_liberation_order = {
+	prestige = 0.1
+	icon = 13
+}
+miloradovich_monument = {
+	pop_militancy_modifier = -0.01
+	prestige = 0.01
+	icon = 13
 }

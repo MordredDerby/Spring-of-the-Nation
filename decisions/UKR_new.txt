@@ -27,13 +27,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
@@ -47,13 +46,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
@@ -67,13 +65,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
@@ -87,13 +84,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
@@ -107,13 +103,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
@@ -127,13 +122,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
@@ -147,13 +141,12 @@ political_decisions = {
 					name = sich
 					duration = -1
 				}
-				any_pop = {
+				random_pop = {
 					limit = {
 						OR= {
 							culture = ukrainian
 							culture = cossacian
 						}
-						NOT = { life_needs = 0.1 }
 						OR = {
 							type = farmers
 							type = labourers
